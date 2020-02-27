@@ -11,7 +11,8 @@ const [ input, setInput ] = useState({
     lname: "",
     email: "",
     role: "",
-    age: ""
+    age: "",
+    bio: "",
 });
 
 const handleChange = (e) => {
@@ -25,13 +26,14 @@ const handleSubmit = (e) => {
         lname: "",
         email: "",
         role: "",
-        age: ""  
+        age: ""  ,
+        bio: ""
     })
 
 }
 
 return (
-<div >
+<div className="inputbox">
     <form className="forms" onSubmit={handleSubmit}>
         <label>
             First Name:  
@@ -52,6 +54,10 @@ return (
         <label>
             Role:  
                 <input onChange={handleChange} value={input.role} placeholder= "role" id= "role" name="role" type="text" />
+        </label>
+        <label>
+            Bio:  
+                <input onChange={handleChange} value={input.bio} placeholder= "Bio" id= "bio" name="bio" type="textarea" />
         </label>
         <button type="submit">Submit</button>
     </form>

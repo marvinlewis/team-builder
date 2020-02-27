@@ -1,26 +1,23 @@
 import React from "react";
-import { Card, Button, CardTitle, CardText } from 'reactstrap';
+import "./posting.css";
+
  
 
 const PostingForms = props => {
     const member1 = props.member;
     return ( 
-        <div>
-
+        <div className="posting-cont">
             {member1.map(member => (
-                <div key={member.id}>
-                    <Card body className="text-center">
-                        <h1>{member.fname}</h1>
-                        <CardText>
-                            <p>{member.fname}</p>
-                            <p>{member.lname}</p>
-                            <p>{member.email}</p>
-                            <p>{member.role}</p>
-                            <p>{member.age}</p>
-                        </CardText>
-        
-                    </Card>
-
+                <div className="posting" key={member.id}>
+                        <h1>Member</h1>
+                            <ul>
+                                <li>First Name: {member.fname}</li>
+                                <li>Last Name: {member.lname}</li>
+                                <li>Email: {member.email}</li>
+                                <li>Role: {member.role}</li>
+                                <li>Age: {member.age}</li>
+                            </ul>
+                            <p>{member.bio}</p>
                 </div>
             ))}
         </div>

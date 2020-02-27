@@ -17,12 +17,13 @@ const addNewMember = (m) => {
     email: m.email,
     role: m.role,
     age: m.age,
+    bio: m.bio,
   };
   setMember([...member, newM])};
 
   return (
     <div className="App">
-      <h1> Marvins Form </h1>
+      <h1 id="tanisha"> Marvins Form </h1>
       <Forms addNewMember={addNewMember}/>
       <PostingForms member={member}/>
     </div>
