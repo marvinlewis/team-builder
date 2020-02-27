@@ -1,27 +1,30 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import Forms from "./components/Forms";
+import PostingForms from "../src/components/PostingForms";
 
 
 function App() {
 
-const [ name, setName ] = useState("");
+const [ member, setMember ] = useState([])
 
-
-const handleChange = (e) => setName(e.target.value); 
-console.log(name);
-
+const addNewMember = (m) => {
+  let newM = {
+    id: Date.now(),
+    fname: m.fname,
+    lname: m.lname,
+    email: m.email,
+    role: m.role,
+    age: m.age,
+  };
+  setMember([...member, newM])};
 
   return (
     <div className="App">
-      <form>
-        <label htmlFor="members">
-          Team Members:  
-            <input onChange={handleChange} placeholder= " Type here"id= "members" name="members" type="text" />
-            <button type="submit">Submit</button>
-        </label>
-      </form>
+      <h1> Marvins Form </h1>
+      <Forms addNewMember={addNewMember}/>
+      <PostingForms member={member}/>
     </div>
   );
 }
