@@ -1,0 +1,22 @@
+.posting{
+    display: flex;
+    flex-direction: column;
+    border: 2px grey solid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 30%;
+    align-items: center;
+    box-shadow: -8px 8px 30px black;
+}
+
+.posting-cont{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1{
+    background-color: black;
+    color: white;
+}
